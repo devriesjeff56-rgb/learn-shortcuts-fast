@@ -8,6 +8,7 @@ import { CodeExamples } from "./CodeExamples";
 import { FooterSection } from "./FooterSection";
 import { BadgeBar } from "./BadgeBar";
 import { WorksWith } from "./WorksWith";
+import { PixelHeading } from "@/components/ui/pixel-heading";
 import type { ShowcaseConfig } from "@/config/showcase.config";
 import defaultConfig from "@/config/showcase.config";
 import { ArrowRight } from "lucide-react";
@@ -57,9 +58,17 @@ export function PackageShowcase({
               [{config.tagline}]
             </p>
           )}
-          <h1 className="font-display text-2xl font-bold lowercase tracking-tight text-foreground sm:text-3xl leading-[1.2]">
+          <PixelHeading
+            as="h1"
+            mode="wave"
+            autoPlay
+            cycleInterval={200}
+            staggerDelay={40}
+            initialFont="square"
+            className="text-2xl font-bold lowercase tracking-tight text-foreground sm:text-3xl leading-[1.2]"
+          >
             {config.description}
-          </h1>
+          </PixelHeading>
 
           {/* CTAs */}
           {config.ctas && config.ctas.length > 0 && (
